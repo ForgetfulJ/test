@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网页</title>
+    <style>
+        body {
+            font-family: '宋体', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-family: '黑体', sans-serif;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav a {
+            color: #fff;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-family: '楷体', cursive;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .section {
+            padding: 20px;
+            margin: 10px 0;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+        }
+        .carousel img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>个人网页</h1>
+</header>
+
+<nav>
+    <a href="#about">个人简介</a>
+    <a href="#education">教育背景</a>
+    <a href="#experience">工作经历</a>
+    <a href="#skills">技能</a>
+    <a href="#projects">项目展示</a>
+    <a href="#contact">联系方式</a>
+</nav>
+
+<div class="container">
+
+    <section id="about" class="section">
+        <h2>个人简介</h2>
+        <p>技术宅、文化宅。</p>
+    </section>
+
+    <section id="education" class="section">
+        <h2>教育背景</h2>
+        <p>研究生。</p>
+    </section>
+
+    <section id="experience" class="section">
+        <h2>工作经历</h2>
+        <ul>
+            <li>教师</li>
+            <li>图书管理员</li>
+            <li>数字游民</li>
+        </ul>
+    </section>
+
+    <section id="skills" class="section">
+        <h2>技能</h2>
+        <p>武术。</p>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>项目展示</h2>
+        <div class="carousel">
+            <img src="project1.jpg" alt="千面城">
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>联系方式</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">姓名:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="email">邮箱:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="message">留言:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">提交</button>
+            </div>
+        </form>
+        <p>联系电话: 18996317318</p>
+    </section>
+
+</div>
+
+<script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel img');
+
+    function showNextImage() {
+        images[currentIndex].style.transform = 'translateX(-100%)';
+        currentIndex = (currentIndex + 1) % image
